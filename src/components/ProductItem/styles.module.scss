@@ -1,43 +1,105 @@
 .productItem {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--secondary-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.productImage {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productTitle {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.productPrice {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.addToCartButton {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--button-hover-color);
+  }
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .productItem {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .productDetails {
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: var(--secondary-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
   }
-  
+
   .productImage {
-    width: 100px;
-    height: auto;
-    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 80px;
   }
-  
-  .productTitle {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: var(--text-color);
+
+  .productInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
-  
+
   .productPrice {
-    font-size: 1rem;
-    color: var(--primary-color);
+    font-size: 0.9rem;
   }
-  
+
   .addToCartButton {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  
-    &:hover {
-      background-color: var(--button-hover-color);
-    }
+    padding: 8px 16px;
+    margin-top: 10px;
+    width: 100%;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .productImage {
+    width: 60px;
+  }
+
+  .productPrice {
+    font-size: 0.8rem;
+  }
+
+  .addToCartButton {
+    padding: 6px 12px;
+  }
+}

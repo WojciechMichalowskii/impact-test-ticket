@@ -9,19 +9,23 @@ interface ProductItemProps {
 const ProductItem = ({ product, onAddToCart }: ProductItemProps) => {
   return (
     <li className={styles.productItem}>
-      <img
-        src={product.image}
-        alt={product.title}
-        className={styles.productImage}
-      />
       <h2 className={styles.productTitle}>{product.title}</h2>
-      <p className={styles.productPrice}>Cena: {product.price} zł</p>
-      <button
-        className={styles.addToCartButton}
-        onClick={() => onAddToCart(product)}
-      >
-        Dodaj do koszyka
-      </button>
+      <div className={styles.productDetails}>
+        <img
+          src={product.image}
+          alt={product.title}
+          className={styles.productImage}
+        />
+        <div className={styles.productInfo}>
+          <p className={styles.productPrice}>Cena: {product.price} zł</p>
+          <button
+            className={styles.addToCartButton}
+            onClick={() => onAddToCart(product)}
+          >
+            Dodaj do koszyka
+          </button>
+        </div>
+      </div>
     </li>
   );
 };
