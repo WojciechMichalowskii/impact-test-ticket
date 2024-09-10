@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $gap;
+  margin-top: $gap;
+  list-style-type: none;
+}
+
+.productItem {
+  background-color: var(--secondary-bg-color);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 15px;
+  text-align: center;
+}
+
+.productImage {
+  width: 100px;
+  height: auto;
+  border-radius: $border-radius;
+  margin-bottom: $padding-base;
+}
+
+.productTitle {
+  font-size: $font-size-subheading;
+  margin-bottom: $padding-base;
+}
+
+.productPrice {
+  margin-bottom: $padding-large;
+}
+
+.addToCartButton {
+  background-color: $primary-color;
+  color: $button-text-color;
+  border: none;
+  padding: $padding-base;
+  font-size: $font-size-base;
+  cursor: pointer;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
