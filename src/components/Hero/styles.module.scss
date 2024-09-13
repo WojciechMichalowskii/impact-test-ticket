@@ -16,19 +16,6 @@
     }
   }
   
-  .ctaButton {
-    background-color: var(--primary-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-  
-    &:hover {
-      background-color: var(--button-hover-color);
-    }
-  }
-  
   @media (max-width: 768px) {
     .heroText h1 {
       font-size: 1.5rem;
@@ -52,8 +39,6 @@
       font-size: 0.9rem;
     }
   
-    .ctaButton {
-      padding: 6px 12px;
-    }
+
   }
   

@@ -2,39 +2,52 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 250px;
   text-align: center;
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .productImage {
-  width: 100px;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
   border-radius: 8px;
 }
 
 .productTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   margin: 10px 0;
   color: var(--text-color);
+  min-height: 48px; /* Dla spójności wysokości nagłówków */
 }
 
 .productPrice {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--primary-color);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .addToCartButton {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 8px;
   cursor: pointer;
+  width: 100%;
   transition: background-color 0.3s;
 
   &:hover {
@@ -42,64 +55,36 @@
   }
 }
 
-.productDetails {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.productInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 @media (max-width: 768px) {
   .productItem {
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .productDetails {
-    flex-direction: column;
+    margin:0 auto;
   }
 
   .productImage {
-    margin-bottom: 10px;
-    width: 80px;
+    width: 120px;
+    height: 120px;
   }
 
-  .productInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .productPrice {
-    font-size: 0.9rem;
+  .productTitle {
+    font-size: 1rem;
   }
 
   .addToCartButton {
-    padding: 8px 16px;
-    margin-top: 10px;
-    width: 100%;
+    padding: 10px 16px;
   }
 }
 
 @media (max-width: 480px) {
   .productImage {
-    width: 60px;
+    width: 100px;
+    height: 100px;
   }
 
-  .productPrice {
-    font-size: 0.8rem;
+  .productTitle {
+    font-size: 0.9rem;
   }
 
   .addToCartButton {
-    padding: 6px 12px;
+    padding: 8px 14px;
   }
 }

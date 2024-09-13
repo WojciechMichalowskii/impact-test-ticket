@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./styles.module.scss";
 import { CartItemType } from "./types";
 
@@ -17,7 +18,14 @@ const CartItem = ({ item, onRemove, onQuantityChange }: CartItemProps) => {
 
   return (
     <li className={styles.cartItem}>
-      <img src={item.image} alt={item.title} className={styles.cartItemImage} />
+      <Image
+        src={item.image}
+        alt={item.title}
+        className={styles.cartItemImage}
+        width={100}
+        height={100}
+        layout="intrinsic"
+      />
       <div className={styles.cartItemDetails}>
         <h2>{item.title}</h2>
         <h6>Cena: {item.price} zł</h6>

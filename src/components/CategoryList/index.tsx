@@ -1,11 +1,20 @@
-import styles from "./styles.module.scss";
+"use client";
+
 import Link from "next/link";
+import styles from "./styles.module.scss";
+import { useCategories } from "@/hooks/useFetchCategories";
 
-interface CategoryListProps {
-  categories: string[];
-}
+const CategoryList = () => {
+  const { categories, isLoading, error } = useCategories();
 
-const CategoryList = ({ categories }: CategoryListProps) => {
+  if (isLoading) {
+    return <p>Ładowanie kategorii...</p>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>;
+  }
+
   return (
     <div>
       <h2>Kategorie</h2>
